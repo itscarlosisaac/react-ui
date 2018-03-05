@@ -8,16 +8,18 @@ import Footer from '../components/statics/Footer';
 // Pages
 import Homepage from '../components/pages/Homepage'
 
+// Components
+import Calculator from '../components/ui/Calculator/Calculator';
+
 const AppRouter = () => (
  <Router>
   <div className="app">
    <div className="app__static">
-    <aside className="app__sidebar">
-     <Nav/>
-    </aside>
+    <Nav/>
     <div className="app__content">
      <Switch>
       <Route exact={true} path="/" component={Homepage} />
+      <Route exact={true} path="/calculator" component={Calculator} />
      </Switch>
      <Footer />
     </div>

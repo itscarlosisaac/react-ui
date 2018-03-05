@@ -1,7 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AppRouter from './routes/app.router'
+import React from "react";
+import ReactDOM from "react-dom";
+import AppRouter from "./routes/app.router";
 
-const root = document.getElementById('app')
+// Import CSS
+import "normalize.css/normalize.css";
+import "./styles/master.scss";
 
-ReactDOM.render( <AppRouter />, root );
+const root = document.getElementById("app");
+
+ReactDOM.render(<AppRouter />, root);
