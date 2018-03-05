@@ -1,0 +1,17 @@
+.app__static {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+.app__content {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  width: calc(100% - 320px);
+}

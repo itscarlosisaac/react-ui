@@ -1,0 +1,42 @@
+@import "../config/Mixins.scss";
+
+.app__sidebar {
+  background: #ed6153;
+  background: -moz-linear-gradient(top, #ed6153 0%, #f8b26d 99%);
+  background: -webkit-linear-gradient(top, #ed6153 0%, #f8b26d 99%);
+  background: linear-gradient(to bottom, #ed6153 0%, #f8b26d 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed6153', endColorstr='#f8b26d', GradientType=0);
+  width: 320px;
+  min-height: 420px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  &--menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+      width: 100%;
+      display: block;
+    }
+  }
+  &--link {
+    color: white;
+    display: block;
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+    padding: 5px 0 5px 20px;
+    &--active {
+      position: relative;
+      font-weight: bold;
+      @include custom_link_hover_active();
+    }
+
+    &:hover {
+      position: relative;
+      @include custom_link_hover_active();
+    }
+  }
+}

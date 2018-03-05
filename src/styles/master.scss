@@ -1,21 +1,11 @@
-@import "./components/Sidebar.scss";
+/*
 
-.app__sidebar {
-  background: #ed6153;
-  background: -moz-linear-gradient(top, #ed6153 0%, #f8b26d 99%);
-  background: -webkit-linear-gradient(top, #ed6153 0%, #f8b26d 99%);
-  background: linear-gradient(to bottom, #ed6153 0%, #f8b26d 99%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed6153', endColorstr='#f8b26d', GradientType=0);
-  width: 480px;
-  min-height: 420px;
-  height: 100vh;
-
-  &--menu {
-  }
-
-  &--link {
-    color: white;
-    display: block;
-    text-decoration: none;
-  }
+*/
+.app {
+  display: flex;
 }
+
+@import "./components/Sidebar.scss";
+@import "./components/Page.scss";
+@import "./components/Footer.scss";
+@import "./config/Fonts.scss";
