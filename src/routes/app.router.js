@@ -18,22 +18,41 @@ import Homepage from "../components/pages/Homepage";
 // Components
 import Calculator from "../components/ui/Calculator/Calculator";
 
-const AppRouter = () => (
-  <Router>
-    <div className="app">
-      <Hamburguer />
-      <div className="app__static">
-        <Nav />
-        <div className="app__content">
-          <Switch>
-            <Route exact={true} path="/" component={Homepage} />
-            <Route exact={true} path="/calculator" component={Calculator} />
-          </Switch>
-          <Footer />
+class AppRouter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: false
+    };
+  }
+
+  handleMenu() {
+    const prev = this.state.menuOpen;
+    this.setState({ menuOpen: !prev });
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="app">
+          <Hamburguer
+            menuOpen={this.state.menuOpen}
+            handleMenu={this.handleMenu.bind(this)}
+          />
+          <div className="app__static">
+            <Nav menuOpen={this.state.menuOpen} />
+            <div className="app__content">
+              <Switch>
+                <Route exact={true} path="/" component={Homepage} />
+                <Route exact={true} path="/calculator" component={Calculator} />
+              </Switch>
+              <Footer />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </Router>
-);
+      </Router>
+    );
+  }
+}
 
 export default AppRouter;

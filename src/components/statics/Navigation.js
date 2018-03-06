@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import CustomLink from "./CustomLink";
-
-console.log(<CustomLink />);
 class Nav extends Component {
   render() {
+    const state = this.props.menuOpen
+      ? "app__sidebar--open"
+      : "app__sidebar--close";
     return (
-      <aside className="app__sidebar">
+      <aside className={`app__sidebar ${state}`}>
         <ul className="app__sidebar--menu">
           <CustomLink to="/">Home</CustomLink>
           <CustomLink to="/calculator">Calculator</CustomLink>
