@@ -7,6 +7,13 @@
   width: 100%;
 }
 
+.app__component__container{
+  height: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+}
+
 .app__content {
   display: flex;
   display: -webkit-flex;

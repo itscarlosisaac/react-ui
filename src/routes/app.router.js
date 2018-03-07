@@ -42,10 +42,12 @@ class AppRouter extends React.Component {
           <div className="app__static">
             <Nav menuOpen={this.state.menuOpen} />
             <div className="app__content">
+              <div className="app__component__container">
               <Switch>
                 <Route exact={true} path="/" component={Homepage} />
                 <Route exact={true} path="/calculator" component={Calculator} />
               </Switch>
+              </div>
               <Footer />
             </div>
           </div>
