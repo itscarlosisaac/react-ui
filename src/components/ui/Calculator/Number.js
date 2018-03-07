@@ -12,7 +12,7 @@ class Number extends Component {
 
   render() {
     return (
-      <button onClick={this.handleAddNumber.bind(this)}>
+      <button className="calculator__app--numbers" onClick={this.handleAddNumber.bind(this)}>
         {this.props.number}
       </button>
     );
