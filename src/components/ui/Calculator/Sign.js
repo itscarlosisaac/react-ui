@@ -8,7 +8,7 @@ class Sign extends Component {
   }
   render() {
     return (
-      <button onClick={this.handleAddSign.bind(this)}>{this.props.sign}</button>
+      <button className="calculator__app--sign" onClick={this.handleAddSign.bind(this)}>{this.props.sign}</button>
     );
   }
 }

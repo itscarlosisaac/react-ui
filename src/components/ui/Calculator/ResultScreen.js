@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class ResultScreen extends Component {
   render() {
-    return <div>{this.props.operation}</div>;
+    return <div className="calculator__app--results">{this.props.operation}</div>;
   }
 }
 

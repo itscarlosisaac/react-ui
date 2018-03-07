@@ -8,18 +8,23 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      numbers: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'],
       signs: ["*", "+", "-", "/", "%", "="],
       operation: "",
-      history: "History",
-      result: "0"
+      history: "0",
+      result: "0",
+      hasDecimal: false
     };
   }
 
   handleAddNumber(num) {
+
     this.setState(prevState => {
       let operation = (prevState.operation += num);
-      return { operation };
+
+      return {
+        operation
+      };
     });
   }
 
@@ -29,7 +34,6 @@ class Calculator extends Component {
       return {
         operation: "",
         result: "0",
-        history: h
       };
     });
   }
@@ -42,7 +46,9 @@ class Calculator extends Component {
       this.state.signs.indexOf(lastChar) == -1
         ? (operation = prevState.operation += sign)
         : (operation = prevState.operation.slice(0, -1) + sign.toString());
-      return { operation };
+      return {
+        operation
+      };
     });
   }
 
@@ -54,40 +60,52 @@ class Calculator extends Component {
     }
     const operation = args;
     const result = eval(operation);
-    this.setState(prev => ({ result, operation }));
+    this.setState(prev => ({
+      result,
+      history: operation,
+      operation: result
+    }));
   }
 
   render() {
     return (
       <div className="calculator__app">
-        <HistoryScreen history={this.state.history} />
-        <ResultScreen operation={this.state.operation} />
-        <h1>{this.state.result}</h1>
-        <div className="numbers">
-          {this.state.numbers.map(num => {
-            return (
-              <Number
-                handleAddNumber={this.handleAddNumber.bind(this)}
-                key={num}
-                number={num}
-              />
-            );
-          })}
-        </div>
-
-        <div className="signs">
-          <button onClick={this.handleReset.bind(this)}>C</button>
-          {this.state.signs.map(s => {
-            return (
-              <Sign
-                handleAddSign={this.handleAddSign.bind(this)}
-                handlePerformOperation={this.handlePerformOperation.bind(this)}
-                key={s}
-                sign={s}
-              />
-            );
-          })}
-        </div>
+        <header className="calculator__app--header">
+          <HistoryScreen history={this.state.history} />
+          <ResultScreen operation={this.state.operation} />
+        </header>
+        <section className="calculator__app--body">
+          <div className="calculator__app--numbers">
+            <button  className="calculator__app--reset" onClick={this.handleReset.bind(this)}> C </button>
+            <Sign
+              handleAddSign={this.handleAddSign.bind(this)}
+              handlePerformOperation={this.handlePerformOperation.bind(this)}
+              sign={'%'}
+            />
+            {this.state.numbers.map(num => {
+              return (
+                <Number
+                  handleAddNumber={this.handleAddNumber.bind(this)}
+                  key={num}
+                  number={num}
+                />
+              );
+            })}
+          </div>
+          <div className="calculator__app--signs" >
+            {this.state.signs.map(s => {
+              if (s === '%') return;
+              return (
+                <Sign
+                  handleAddSign={this.handleAddSign.bind(this)}
+                  handlePerformOperation={this.handlePerformOperation.bind(this)}
+                  key={s}
+                  sign={s}
+                />
+              );
+            })}
+          </div>
+        </section>
       </div>
     );
   }
