@@ -28,10 +28,15 @@ class Calculator extends Component {
   }
 
   handleAddSign(sign) {
-    if (this.state.operation == '') return;
+    let lastChar = this.state.operation[this.state.operation.length - 1]
+    let tempOperation;
+    if (this.state.operation == '' ) return;
     this.setState( prevState => {
-      const operation = prevState.operation += sign
-      return { operation };
+      this.state.signs.indexOf(lastChar) == -1 ? 
+        tempOperation = prevState.operation += sign : 
+        tempOperation = prevState.operation.slice(0, -1 ) + sign.toString();
+      
+      return { operation: tempOperation };
     });
   }
 
