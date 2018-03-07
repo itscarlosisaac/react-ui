@@ -1,0 +1,10 @@
+.calculator__app {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 26px 2px #e6e6e6;
+  &--numbers {
+    border: none;
+    background: #eeedff;
+  }
+}
