@@ -23,6 +23,10 @@ class Calculator extends Component {
     });
   }
 
+  handleReset(){
+    this.setState({ operation: '', result: ''});
+  }
+
   handleAddSign(sign) {
     if (this.state.operation == '') return;
     this.setState( prevState => {
@@ -68,6 +72,7 @@ class Calculator extends Component {
             />
           );
         })}
+        <button onClick={this.handleReset.bind(this)}>C</button>
       </div>
     );
   }
