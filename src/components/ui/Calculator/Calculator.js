@@ -16,7 +16,7 @@ class Calculator extends Component {
       hasDecimal: false
     };
   }
-
+  
   handleAddNumber(num) {
 
     this.setState(prevState => {
