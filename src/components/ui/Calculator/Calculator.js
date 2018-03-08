@@ -18,9 +18,12 @@ class Calculator extends Component {
   }
 
   handleAddNumber(num) {
-    if ( this.state.operation.includes('.') && num == '.' ) return;
+    const op = this.state.operation.toString();
+    if (op.includes(".") && num == ".") return;
+    if (op == "0" && num == "0") return;
+
     this.setState(prevState => {
-      let operation = (prevState.operation += num);
+      let operation = prevState.operation += num.toString();
 
       return {
         operation
@@ -41,7 +44,7 @@ class Calculator extends Component {
   handleAddSign(sign) {
     let lastChar = this.state.operation[this.state.operation.length - 1];
     let operation;
-    if (this.state.operation == "" ) return;
+    if (this.state.operation == "") return;
     this.setState(prevState => {
       this.state.signs.indexOf(lastChar) == -1
         ? (operation = prevState.operation += sign)
@@ -55,11 +58,13 @@ class Calculator extends Component {
   handlePerformOperation() {
     var args = this.state.operation;
     const lastChar = args[args.length - 1];
-    if (this.state.signs.indexOf(lastChar) !== -1) {
-      args = args.slice(0, -1);
-    }
+    const firstChar = args[0];
+    if (this.state.signs.indexOf(lastChar) !== -1) args = args.slice(0, -1);
+    if (firstChar == 0 && !args.includes('.') ) args = args.slice(1)
+    console.log(firstChar, args)
     const operation = args;
-    const result = eval(operation);
+    let result = eval(operation).toString();
+    if (result.includes('.') && result.length > 8 ) result = Math.abs(result).toFixed(4);
     this.setState(prev => ({
       result,
       history: operation,
@@ -80,8 +85,7 @@ class Calculator extends Component {
               className="calculator__app--reset"
               onClick={this.handleReset.bind(this)}
             >
-              {" "}
-              C{" "}
+              C
             </button>
             <Sign
               handleAddSign={this.handleAddSign.bind(this)}
