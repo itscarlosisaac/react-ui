@@ -17,7 +17,6 @@ class Calculator extends Component {
   }
 
   handleKey(input){
-    // console.log(input)
     if( this.state.numbers.join('').includes(input.key)) this.handleAddNumber(input.key)
     if( this.state.signs.join('').includes(input.key)) this.handleAddSign(input.key)
     if( input.keyCode == 13 ) this.handlePerformOperation()
