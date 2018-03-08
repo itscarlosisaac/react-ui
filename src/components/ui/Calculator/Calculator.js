@@ -13,9 +13,25 @@ class Calculator extends Component {
       operation: "",
       history: "0",
       result: "0",
-      hasDecimal: false
     };
   }
+
+  handleKey(input){
+    // console.log(input)
+    if( this.state.numbers.join('').includes(input.key)) this.handleAddNumber(input.key)
+    if( this.state.signs.join('').includes(input.key)) this.handleAddSign(input.key)
+    if( input.keyCode == 13 ) this.handlePerformOperation()
+    return;
+  }
+
+  componentWillMount() {
+    window.addEventListener('keyup', this.handleKey.bind(this) )
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('keyup', this.handleKey );
+  }
+  
 
   handleAddNumber(num) {
     const op = this.state.operation.toString();
@@ -61,7 +77,6 @@ class Calculator extends Component {
     const firstChar = args[0];
     if (this.state.signs.indexOf(lastChar) !== -1) args = args.slice(0, -1);
     if (firstChar == 0 && !args.includes('.') ) args = args.slice(1)
-    console.log(firstChar, args)
     const operation = args;
     let result = eval(operation).toString();
     if (result.includes('.') && result.length > 8 ) result = Math.abs(result).toFixed(4);
@@ -74,7 +89,7 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div className="calculator__app">
+      <div className="calculator__app"> 
         <header className="calculator__app--header">
           <HistoryScreen history={this.state.history} />
           <ResultScreen operation={this.state.operation} />
@@ -84,9 +99,7 @@ class Calculator extends Component {
             <button
               className="calculator__app--reset"
               onClick={this.handleReset.bind(this)}
-            >
-              C
-            </button>
+            > C </button>
             <Sign
               handleAddSign={this.handleAddSign.bind(this)}
               handlePerformOperation={this.handlePerformOperation.bind(this)}
