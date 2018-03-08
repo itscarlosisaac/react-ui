@@ -16,7 +16,7 @@ module.exports = env => {
 
   return {
     entry: {
-      app: [path.join(__dirname, "/src/App.js")],
+      app: ["./src/app.js"],
       vendor: ["react", "react-dom", "react-router-dom"]
     },
     output: {
