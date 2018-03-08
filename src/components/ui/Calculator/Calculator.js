@@ -8,7 +8,7 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numbers: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'],
+      numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "."],
       signs: ["*", "+", "-", "/", "%", "="],
       operation: "",
       history: "0",
@@ -16,9 +16,9 @@ class Calculator extends Component {
       hasDecimal: false
     };
   }
-  
-  handleAddNumber(num) {
 
+  handleAddNumber(num) {
+    if ( this.state.operation.includes('.') && num == '.' ) return;
     this.setState(prevState => {
       let operation = (prevState.operation += num);
 
@@ -33,7 +33,7 @@ class Calculator extends Component {
       let h = prev.operation;
       return {
         operation: "",
-        result: "0",
+        result: "0"
       };
     });
   }
@@ -41,7 +41,7 @@ class Calculator extends Component {
   handleAddSign(sign) {
     let lastChar = this.state.operation[this.state.operation.length - 1];
     let operation;
-    if (this.state.operation == "") return;
+    if (this.state.operation == "" ) return;
     this.setState(prevState => {
       this.state.signs.indexOf(lastChar) == -1
         ? (operation = prevState.operation += sign)
@@ -76,11 +76,17 @@ class Calculator extends Component {
         </header>
         <section className="calculator__app--body">
           <div className="calculator__app--numbers">
-            <button  className="calculator__app--reset" onClick={this.handleReset.bind(this)}> C </button>
+            <button
+              className="calculator__app--reset"
+              onClick={this.handleReset.bind(this)}
+            >
+              {" "}
+              C{" "}
+            </button>
             <Sign
               handleAddSign={this.handleAddSign.bind(this)}
               handlePerformOperation={this.handlePerformOperation.bind(this)}
-              sign={'%'}
+              sign={"%"}
             />
             {this.state.numbers.map(num => {
               return (
@@ -92,13 +98,15 @@ class Calculator extends Component {
               );
             })}
           </div>
-          <div className="calculator__app--signs" >
+          <div className="calculator__app--signs">
             {this.state.signs.map(s => {
-              if (s === '%') return;
+              if (s === "%") return;
               return (
                 <Sign
                   handleAddSign={this.handleAddSign.bind(this)}
-                  handlePerformOperation={this.handlePerformOperation.bind(this)}
+                  handlePerformOperation={this.handlePerformOperation.bind(
+                    this
+                  )}
                   key={s}
                   sign={s}
                 />
