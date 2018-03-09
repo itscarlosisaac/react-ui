@@ -40,7 +40,7 @@ class AppRouter extends React.Component {
             handleMenu={this.handleMenu.bind(this)}
           />
           <div className="app__static">
-            <Nav menuOpen={this.state.menuOpen} />
+            <Nav menuOpen={this.state.menuOpen} handleMenu={this.handleMenu.bind(this)} />
             <div className="app__content">
               <div className="app__component__container">
               <Switch>
