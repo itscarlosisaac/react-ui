@@ -48,9 +48,11 @@
   .app__sidebar--close {
     position: absolute;
     transform: translateX(-320px);
+    z-index: 99999;
   }
   .app__sidebar--open {
     position: absolute;
+    z-index: 99999;
     transform: translateX(0);
   }
 }

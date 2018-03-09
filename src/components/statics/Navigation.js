@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import CustomLink from "./CustomLink";
 class Nav extends Component {
+  
   render() {
     const state = this.props.menuOpen
       ? "app__sidebar--open"
@@ -9,8 +10,8 @@ class Nav extends Component {
     return (
       <aside className={`app__sidebar ${state}`}>
         <ul className="app__sidebar--menu">
-          <CustomLink to="/">Home</CustomLink>
-          <CustomLink to="/calculator">Calculator</CustomLink>
+          <CustomLink to="/" handleMenu={this.props.handleMenu.bind(this) }>Home</CustomLink>
+          <CustomLink to="/calculator" handleMenu={this.props.handleMenu.bind(this) }>Calculator</CustomLink>
         </ul>
       </aside>
     );
