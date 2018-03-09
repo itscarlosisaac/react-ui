@@ -1,0 +1,16 @@
+.app__ui__header{
+ &--title{
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: .5pt;
+ }
+ &--description{
+  margin: 0;
+ }
+ &--divider{
+  height: 2px;
+  width: 50px;
+  background: #f0775a;
+  margin: 20px 0 80px;
+ }
+}

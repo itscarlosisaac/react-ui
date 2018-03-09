@@ -3,7 +3,7 @@ import Number from "./Number";
 import Sign from "./Sign";
 import ResultScreen from "./ResultScreen";
 import HistoryScreen from "./HistoryScreen";
-
+import Header from '../Header';
 class Calculator extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,8 @@ class Calculator extends Component {
       operation: "",
       history: "0",
       result: "0",
+      title: "Simple calculator app",
+      description: "Accepts keyboard inputs."
     };
   }
 
@@ -60,6 +62,10 @@ class Calculator extends Component {
     let lastChar = this.state.operation[this.state.operation.length - 1];
     let operation;
     if (this.state.operation == "") return;
+    if (sign == "="){
+      this.handlePerformOperation();
+      return false;
+    }
     this.setState(prevState => {
       this.state.signs.indexOf(lastChar) == -1
         ? (operation = prevState.operation += sign)
@@ -88,48 +94,51 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div className="calculator__app"> 
-        <header className="calculator__app--header">
-          <HistoryScreen history={this.state.history} />
-          <ResultScreen operation={this.state.operation} />
-        </header>
-        <section className="calculator__app--body">
-          <div className="calculator__app--numbers">
-            <button
-              className="calculator__app--reset"
-              onClick={this.handleReset.bind(this)}
-            > C </button>
-            <Sign
-              handleAddSign={this.handleAddSign.bind(this)}
-              handlePerformOperation={this.handlePerformOperation.bind(this)}
-              sign={"%"}
-            />
-            {this.state.numbers.map(num => {
-              return (
-                <Number
-                  handleAddNumber={this.handleAddNumber.bind(this)}
-                  key={num}
-                  number={num}
-                />
-              );
-            })}
-          </div>
-          <div className="calculator__app--signs">
-            {this.state.signs.map(s => {
-              if (s === "%") return;
-              return (
-                <Sign
-                  handleAddSign={this.handleAddSign.bind(this)}
-                  handlePerformOperation={this.handlePerformOperation.bind(
-                    this
-                  )}
-                  key={s}
-                  sign={s}
-                />
-              );
-            })}
-          </div>
-        </section>
+      <div>
+        <Header title={this.state.title54} description={this.state.description}/>
+        <div className="calculator__app"> 
+          <header className="calculator__app--header">
+            <HistoryScreen history={this.state.history} />
+            <ResultScreen operation={this.state.operation} />
+          </header>
+          <section className="calculator__app--body">
+            <div className="calculator__app--numbers">
+              <button
+                className="calculator__app--reset"
+                onClick={this.handleReset.bind(this)}
+              > C </button>
+              <Sign
+                handleAddSign={this.handleAddSign.bind(this)}
+                handlePerformOperation={this.handlePerformOperation.bind(this)}
+                sign={"%"}
+              />
+              {this.state.numbers.map(num => {
+                return (
+                  <Number
+                    handleAddNumber={this.handleAddNumber.bind(this)}
+                    key={num}
+                    number={num}
+                  />
+                );
+              })}
+            </div>
+            <div className="calculator__app--signs">
+              {this.state.signs.map(s => {
+                if (s === "%") return;
+                return (
+                  <Sign
+                    handleAddSign={this.handleAddSign.bind(this)}
+                    handlePerformOperation={this.handlePerformOperation.bind(
+                      this
+                    )}
+                    key={s}
+                    sign={s}
+                  />
+                );
+              })}
+            </div>
+          </section>
+        </div>
       </div>
     );
   }
