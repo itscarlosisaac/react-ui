@@ -3,6 +3,7 @@
   margin: 0;
   font-size: 2.5rem;
   letter-spacing: .5pt;
+  color: #3f3f3f;
  }
  &--description{
   margin: 0;
@@ -12,5 +13,26 @@
   width: 50px;
   background: #f0775a;
   margin: 20px 0 80px;
+ }
+}
+
+@media all and (max-width:768px){
+ .app__ui__header{
+  padding: 0 20px;
+  text-align: center;
+  &--divider{
+   margin: 20px auto 80px;
+  }
+ }
+}
+
+@media all and (max-width:560px){
+ .app__ui__header{
+  padding: 0 20px;
+  text-align: center;
+  &--title{
+   font-size: 1.8rem;
+   font-weight: 600;
+  }
  }
 }

@@ -84,3 +84,10 @@
     height: 53px;
   }
 }
+
+
+@media all and (max-width:768px){
+  .calculator__app{
+    margin: 0 auto;
+  }
+}

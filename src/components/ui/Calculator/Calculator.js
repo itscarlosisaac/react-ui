@@ -13,7 +13,7 @@ class Calculator extends Component {
       operation: "",
       history: "0",
       result: "0",
-      title: "Simple calculator app",
+      title: "Simple Calculator App",
       description: "Accepts keyboard inputs."
     };
   }
@@ -95,7 +95,7 @@ class Calculator extends Component {
   render() {
     return (
       <div>
-        <Header title={this.state.title54} description={this.state.description}/>
+        <Header title={this.state.title} description={this.state.description}/>
         <div className="calculator__app"> 
           <header className="calculator__app--header">
             <HistoryScreen history={this.state.history} />
