@@ -14,7 +14,7 @@ class Calculator extends Component {
       history: "0",
       result: "0",
       title: "Simple Calculator App",
-      description: "Accepts keyboard inputs.",
+      description: "Accepts keyboard inputs, and max input is 9 characters",
       hasPoint: false
     };
   }
