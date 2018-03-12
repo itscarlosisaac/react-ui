@@ -12,6 +12,7 @@ class Nav extends Component {
         <ul className="app__sidebar--menu">
           <CustomLink to="/" handleMenu={this.props.handleMenu.bind(this) }>Home</CustomLink>
           <CustomLink to="/calculator" handleMenu={this.props.handleMenu.bind(this) }>Calculator</CustomLink>
+          <CustomLink to="/surf" handleMenu={this.props.handleMenu.bind(this) }>Surf Product</CustomLink>
         </ul>
       </aside>
     );
