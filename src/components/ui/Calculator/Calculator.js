@@ -14,7 +14,8 @@ class Calculator extends Component {
       history: "0",
       result: "0",
       title: "Simple Calculator App",
-      description: "Accepts keyboard inputs."
+      description: "Accepts keyboard inputs.",
+      hasPoint: false
     };
   }
 
@@ -26,25 +27,38 @@ class Calculator extends Component {
   }
 
   componentWillMount() {
-    window.addEventListener('keyup', this.handleKey.bind(this) )
+    window.addEventListener('keyup', this.handleKey.bind(this) );
   }
 
   componentWillUnmount(){
     window.removeEventListener('keyup', this.handleKey );
   }
-  
 
   handleAddNumber(num) {
     const op = this.state.operation.toString();
-    if (op.includes(".") && num == ".") return;
+    const hasPoint = this.state.hasPoint;
+
     if (op == "0" && num == "0") return;
 
-    this.setState(prevState => {
-      let operation = prevState.operation += num.toString();
-      return {
-        operation
-      };
-    });
+    if( op.length >= 9 ) return
+
+    if( num == "." && !hasPoint ){ 
+      this.setState(prevState => {
+        let operation = prevState.operation += num.toString();
+        return {
+          operation,
+          hasPoint: true
+        };
+      });
+     }else if( num !== "." ){
+      this.setState( prevState => {
+        let operation = prevState.operation += num.toString();
+        return {
+          operation
+        };
+      });
+     }else{ return }
+    
   }
 
   handleReset() {
@@ -52,7 +66,8 @@ class Calculator extends Component {
       let h = prev.operation;
       return {
         operation: "",
-        result: "0"
+        result: "0",
+        hasPoint: false
       };
     });
   }
@@ -60,7 +75,10 @@ class Calculator extends Component {
   handleAddSign(sign) {
     let lastChar = this.state.operation[this.state.operation.length - 1];
     let operation;
+
     if (this.state.operation == "" && sign !== "-" || this.state.operation == "-") return;
+    if( this.state.operation.length >= 9 ) return
+
     if (sign == "="){
       this.handlePerformOperation();
       return false;
@@ -70,7 +88,8 @@ class Calculator extends Component {
         ? (operation = prevState.operation += sign)
         : (operation = prevState.operation.slice(0, -1) + sign.toString());
       return {
-        operation
+        operation,
+        hasPoint: false
       };
     });
   }
