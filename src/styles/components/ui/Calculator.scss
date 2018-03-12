@@ -82,6 +82,13 @@
     font-weight: lighter;
     margin: 0;
     height: 53px;
+    &--empty{ 
+      &::after { 
+        display: block; 
+        content: "0"; 
+        opacity: .2; 
+      } 
+    } 
   }
 }
 
