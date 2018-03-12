@@ -16,6 +16,22 @@ const Data = [
   "size": `5'2"`,
   "rate": 3,
   "price": 345
+ },
+ {
+  "title": "Pukas Rainbow By Mikel Agote",
+  "smallTitle": "Pukas Rainbow",
+  "description": "Designed for good free average surfers. This table is intended to be used by amateurs.",
+  "size": `6'2"`,
+  "rate": 5,
+  "price": 750
+ },
+ {
+  "title": "Pukas Blue By Mikel Douglass",
+  "smallTitle": "Pukas Blue",
+  "description": "Designed for good free average surfers. This table is intended to be used by amateurs.",
+  "size": `6'1"`,
+  "rate": 4,
+  "price": 445
  }
 ]
 
