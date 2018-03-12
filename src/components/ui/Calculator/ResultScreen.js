@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
 class ResultScreen extends Component {
+  
   render() {
-    return <div className="calculator__app--results">{this.props.operation}</div>;
+    const op = this.props.operation;
+    return <div className={ op !== "" ? "calculator__app--results" : "calculator__app--results calculator__app--results--empty" }>{op}</div>;
   }
 }
 
