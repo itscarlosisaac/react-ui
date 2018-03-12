@@ -41,7 +41,6 @@ class Calculator extends Component {
 
     this.setState(prevState => {
       let operation = prevState.operation += num.toString();
-
       return {
         operation
       };
@@ -61,7 +60,7 @@ class Calculator extends Component {
   handleAddSign(sign) {
     let lastChar = this.state.operation[this.state.operation.length - 1];
     let operation;
-    if (this.state.operation == "") return;
+    if (this.state.operation == "" && sign !== "-" || this.state.operation == "-") return;
     if (sign == "="){
       this.handlePerformOperation();
       return false;
