@@ -17,6 +17,7 @@ import Homepage from "../components/pages/Homepage";
 
 // Components
 import Calculator from "../components/ui/Calculator/Calculator";
+import SurfProductCard from '../components/ui/SurfProduct/SurfProductCard';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class AppRouter extends React.Component {
               <Switch>
                 <Route exact={true} path="/" component={Homepage} />
                 <Route exact={true} path="/calculator" component={Calculator} />
+                <Route exact={true} path="/surf" component={SurfProductCard} />
               </Switch>
               </div>
               <Footer />
