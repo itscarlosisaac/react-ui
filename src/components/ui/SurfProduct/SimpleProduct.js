@@ -9,15 +9,16 @@ class SimpleProduct extends Component {
    "description": "",
    "size": "",
    "rate": "",
-   "price": ""
+   "price": "",
+   "imageUrl": ""
   }
  }
 
  
  componentWillMount() {
-  const { title, smallTitle, description, size, rate, price } = this.props.data
+  const { title, smallTitle, description, size, rate, price, imageUrl } = this.props.data
   this.setState( (prev) => ({
-   title, smallTitle, description, size, rate, price
+   title, smallTitle, description, size, rate, price, imageUrl
   }))
  }
  
@@ -30,7 +31,7 @@ class SimpleProduct extends Component {
   return (
    <div onClick={this.handleChange.bind(this)} className="sp__card__app--simple--product">
     <div className="div">
-     <img src={this.state.image} alt={this.state.smallTitle}/>
+     <img src={this.state.imageUrl} width="30" alt={this.state.smallTitle}/>
     </div>
     <div className="div">
     <h4>{this.state.smallTitle}</h4>
