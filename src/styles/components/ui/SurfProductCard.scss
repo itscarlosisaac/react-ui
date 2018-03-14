@@ -6,17 +6,22 @@
  max-width: 650px;
  overflow: hidden;
  position: relative;
+ flex-wrap: wrap;
 
- *{ 
+ * { 
    z-index: 10;
    position: relative;
   }
 
  &--thumb{
-  margin-right: 40px;
+  margin-right: 20px;
  }
 
- &--header{}
+ &--body{
+   width: 70%;
+   margin-top: 40px;
+ }
+ 
  &--title{
   margin: 0;
   text-transform: uppercase
@@ -32,7 +37,7 @@
   font-size: 1.6rem;
  }
  
- &--description{}
+ 
  &--button{
   background: #ffd800;
   color:#000;
@@ -54,6 +59,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 auto;
   header{
    width: 100%;
   }
@@ -96,37 +102,14 @@
    }
   }
  }
+  &--rate{
+    margin: 10px 0;
+  }
+  &--icon{
+    color:#ffd800;
+    margin: 0 5px 0 0;
+  }
 }
-
-@keyframes leave {
- 0% {
-   transform: translateX(0px);
- }
- 100% {
-   transform: translateX(900px);
- }
-}
-
-@keyframes leave {
- 0% {
-   transform: translateX(-900px);
- }
- 100% {
-   transform: translateX(0px);
- }
-}
-
-
-.will--leave {
- animation: leave 1s;
- -webkit-animation: leave 1s;
-}
-
-.will--enter {
- animation: enter 1s;
- -webkit-animation: enter 1s;
-}
-
 
 
 .app__wave {
@@ -141,7 +124,8 @@
   margin-top: 250px;
   transform-origin: 50% 48%;
   border-radius: 43%;
-  animation: drift 3000ms infinite linear;
+  animation: wave__rotate 3000ms infinite linear;
+
   &__container{
     z-index: 1 !important;
     position: absolute;
@@ -149,26 +133,29 @@
     right: 0;
   }
 
-
   &--one {
-    animation: drift 9000ms infinite linear;
+    animation: wave__rotate 9000ms infinite linear;
     background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));;
   }
   &--two {
-    animation: drift 7000ms infinite linear;
+    animation: wave__rotate 7000ms infinite linear;
     opacity: .1;
     background: rgb(0, 255, 234);
   }
   
   &--three {
-    animation: drift 5000ms infinite linear;
+    animation: wave__rotate 5000ms infinite linear;
     opacity: .5;
   }
 }
 
-@keyframes drift {
+@keyframes wave__rotate {
   from { transform: rotate(0deg); }
   from { transform: rotate(360deg); }
 }
 
 
+
+@media all and(max-width:1024px){
+  
+}

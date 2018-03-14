@@ -76,8 +76,8 @@ class SurfProductCard extends Component {
        <p className="sp__card__app--description">{this.state.description}</p>
        <button className="sp__card__app--button">Buy</button>
       </header>
-      <RelatedProduct handleChange={this.handleChange.bind(this)} data={this.state.data} />
      </div>
+     <RelatedProduct handleChange={this.handleChange.bind(this)} data={this.state.data} />
      <WaveBg />
     </div>
    </div>
