@@ -32,6 +32,22 @@ class SurfProductCard extends Component {
   )
  }
 
+ componentWillUpdate(){
+  // const image = document.getElementById("sp__card__app--image");
+  // image.classList.add('will--leave')
+ }
+
+ componentDidUpdate() {
+  // const image = document.getElementById("sp__card__app--image");
+  // setTimeout( () => {
+  //  image.classList.add('will--enter')
+  //  setTimeout(()=>{
+  //   image.classList.remove('will--leave')
+  //   image.classList.remove('will--enter')
+  //  }, 1000 )
+  // }, 1200 )
+ }
+
  handleChange(data){
   const { title, smallTitle, description, size, rate, price, imageUrl } = data
   this.setState( (prev) => ({
@@ -46,7 +62,7 @@ class SurfProductCard extends Component {
 
     <div className="sp__card__app">
      <div className="sp__card__app--thumb">
-      <img src={this.state.imageUrl} alt=""/>
+      <img id="sp__card__app--image" src={this.state.imageUrl} alt=""/>
      </div>
      <div className="sp__card__app--body">
       <header className="sp__card__app--header">
@@ -56,7 +72,7 @@ class SurfProductCard extends Component {
        <Rate rating={this.state.rate} />
 
        <small  className="sp__card__app--price">${this.state.price}</small>
-       <p  className="sp__card__app--description">{this.state.description}</p>
+       <p className="sp__card__app--description">{this.state.description}</p>
        <button className="sp__card__app--button">Buy</button>
       </header>
       <RelatedProduct handleChange={this.handleChange.bind(this)} data={this.state.data} />

@@ -7,7 +7,7 @@ class RelatedProduct extends Component {
   return (
    <div className="sp__card__app--related">
     <header>
-     <h3>Related Product</h3>
+     <h3>Related Products</h3>
     </header>
     {
      this.props.data.map( (product, index) => {

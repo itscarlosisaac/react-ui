@@ -4,6 +4,7 @@
  padding: 20px;
  display: flex;
  max-width: 650px;
+ overflow: hidden;
  &--thumb{
   margin-right: 40px;
  }
@@ -63,8 +64,56 @@
    text-transform: uppercase;
   }
   small{
-   color:#000;
-   font-weight: 500;
+   color: #000;
+   font-weight: 600;
+   font-size: 1rem;
+   margin-top: -15px;
+   display: block;
   }
  }
+ &--related{
+  h3{
+   margin: 20px 0 20px 0;
+   font-size: 16px;
+   letter-spacing: .3pt;
+   font-weight: 500;
+   &::after {
+    content: '';
+    margin-top: 5px;
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: white;
+   }
+  }
+ }
+}
+
+@keyframes leave {
+ 0% {
+   transform: translateX(0px);
+ }
+ 100% {
+   transform: translateX(900px);
+ }
+}
+
+@keyframes leave {
+ 0% {
+   transform: translateX(-900px);
+ }
+ 100% {
+   transform: translateX(0px);
+ }
+}
+
+
+.will--leave {
+ animation: leave 1s;
+ -webkit-animation: leave 1s;
+}
+
+.will--enter {
+ animation: enter 1s;
+ -webkit-animation: enter 1s;
 }

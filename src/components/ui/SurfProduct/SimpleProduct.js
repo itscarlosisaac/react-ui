@@ -35,7 +35,7 @@ class SimpleProduct extends Component {
     </div>
     <div className="div">
     <h4>{this.state.smallTitle}</h4>
-    <small>{this.state.price}</small>
+    <small>${this.state.price}</small>
     </div>
    </div>
   );
