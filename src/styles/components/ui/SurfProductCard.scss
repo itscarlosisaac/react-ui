@@ -134,7 +134,7 @@
   position: absolute;
   top: 3%;
   left: 50%;
-  background: #0af;
+  background:rgba(0, 170, 255, 0.6);
   width: 900px;
   height: 900px;
   margin-left: -450px;
@@ -157,11 +157,12 @@
   &--two {
     animation: drift 7000ms infinite linear;
     opacity: .1;
-    background: yellow;
+    background: rgb(0, 255, 234);
   }
   
   &--three {
     animation: drift 5000ms infinite linear;
+    opacity: .5;
   }
 }
 
