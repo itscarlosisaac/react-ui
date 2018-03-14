@@ -1,13 +1,21 @@
 .sp__card__app{
- background-color: #8ed0ff;
+ background-color: #fff;
  box-shadow: 0 19px 38px rgba(0,0,0,0.05), 0 15px 12px rgba(0,0,0,0.02);
  padding: 20px;
  display: flex;
  max-width: 650px;
  overflow: hidden;
+ position: relative;
+
+ *{ 
+   z-index: 10;
+   position: relative;
+  }
+
  &--thumb{
   margin-right: 40px;
  }
+
  &--header{}
  &--title{
   margin: 0;
@@ -41,6 +49,7 @@
   box-shadow:0 4px 10px rgba(0, 0, 0, 0.12);
   cursor: pointer;
  }
+
  &--related{
   display: flex;
   flex-direction: row;
@@ -49,14 +58,13 @@
    width: 100%;
   }
  }
+
  &--simple--product{
   text-align: center;
   box-sizing: border-box;
   width: 25%;
   cursor: pointer;
-  img{
-   
-  }
+
   h4{
    margin: 0;
    font-size: 12px;
@@ -71,6 +79,7 @@
    display: block;
   }
  }
+
  &--related{
   h3{
    margin: 20px 0 20px 0;
@@ -117,3 +126,48 @@
  animation: enter 1s;
  -webkit-animation: enter 1s;
 }
+
+
+
+.app__wave {
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #0af;
+  width: 900px;
+  height: 900px;
+  margin-left: -450px;
+  margin-top: 250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+  &__container{
+    z-index: 1 !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+
+  &--one {
+    animation: drift 9000ms infinite linear;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));;
+  }
+  &--two {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  &--three {
+    animation: drift 5000ms infinite linear;
+  }
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+

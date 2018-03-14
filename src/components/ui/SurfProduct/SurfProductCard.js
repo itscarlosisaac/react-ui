@@ -3,6 +3,7 @@ import Header from '../Header';
 import ProductData from './Data/data';
 import RelatedProduct from './RelatedProduct';
 import Rate from './Rate';
+import WaveBg from './WaveBg';
 
 class SurfProductCard extends Component {
  constructor(props){
@@ -77,6 +78,7 @@ class SurfProductCard extends Component {
       </header>
       <RelatedProduct handleChange={this.handleChange.bind(this)} data={this.state.data} />
      </div>
+     <WaveBg />
     </div>
    </div>
   )
