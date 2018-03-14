@@ -154,8 +154,22 @@
   from { transform: rotate(360deg); }
 }
 
+@media all and(max-width:670px){
+  .sp__card__app{
+    padding: 10px;
+    &--thumb{ margin-right: 5px; }
+    &--body{ width: 50%; } 
+  }
+}
 
-
-@media all and(max-width:1024px){
-  
+@media all and(max-width:390px){
+  .sp__card__app{
+    &--thumb{ margin:0 auto; }
+    &--body{ 
+      width: 100%; 
+      text-align: center;
+    } 
+    &--button{ margin: 0 auto; }
+    &--simple--product{ width: 50%; }
+  }
 }
