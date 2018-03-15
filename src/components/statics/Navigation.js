@@ -13,6 +13,7 @@ class Nav extends Component {
           <CustomLink to="/" handleMenu={this.props.handleMenu.bind(this) }>Home</CustomLink>
           <CustomLink to="/calculator" handleMenu={this.props.handleMenu.bind(this) }>Calculator</CustomLink>
           <CustomLink to="/surf" handleMenu={this.props.handleMenu.bind(this) }>Surf Product</CustomLink>
+          <CustomLink to="/cinema" handleMenu={this.props.handleMenu.bind(this) }>Cinema App</CustomLink>
         </ul>
       </aside>
     );

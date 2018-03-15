@@ -18,6 +18,7 @@ import Homepage from "../components/pages/Homepage";
 // Components
 import Calculator from "../components/ui/Calculator/Calculator";
 import SurfProductCard from '../components/ui/SurfProduct/SurfProductCard';
+import CinemaApp from '../components/ui/Cinema/CinemaApp';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class AppRouter extends React.Component {
                 <Route exact={true} path="/" component={Homepage} />
                 <Route exact={true} path="/calculator" component={Calculator} />
                 <Route exact={true} path="/surf" component={SurfProductCard} />
+                <Route exact={true} path="/cinema" component={CinemaApp} />
               </Switch>
               </div>
               <Footer />
