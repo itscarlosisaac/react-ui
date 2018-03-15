@@ -33,22 +33,6 @@ class SurfProductCard extends Component {
   )
  }
 
- componentWillUpdate(){
-  // const image = document.getElementById("sp__card__app--image");
-  // image.classList.add('will--leave')
- }
-
- componentDidUpdate() {
-  // const image = document.getElementById("sp__card__app--image");
-  // setTimeout( () => {
-  //  image.classList.add('will--enter')
-  //  setTimeout(()=>{
-  //   image.classList.remove('will--leave')
-  //   image.classList.remove('will--enter')
-  //  }, 1000 )
-  // }, 1200 )
- }
-
  handleChange(data){
   const { title, smallTitle, description, size, rate, price, imageUrl } = data
   this.setState( (prev) => ({

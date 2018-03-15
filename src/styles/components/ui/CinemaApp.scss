@@ -1,0 +1,14 @@
+.cinema__app{
+ &__seats__container{
+  display: flex;
+  flex-direction: column;
+ }
+ &__seat{
+
+ }
+ &__row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ }
+}
