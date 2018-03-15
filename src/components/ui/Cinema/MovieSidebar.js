@@ -6,7 +6,7 @@ class MovieSidebar extends Component {
   return (
    <aside>
     <div>
-     <video src={trailerUrl}></video>
+     <iframe width="560" height="315" src={trailerUrl} frameborder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
     <div>
      <div className="rating"></div>

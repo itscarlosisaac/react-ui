@@ -1,3 +1,4 @@
+import React from 'react';
 
 const Rooms = [
  {
@@ -11,14 +12,14 @@ const Rooms = [
 const Movies = [
  {
   "roomId": 1,
-  "name": "Guardian of the Galaxia",
+  "name": "Guardians of the Galaxy",
   "description": "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe." ,
   "length": 121, 
   "year": 2014,
   "categories": [ "adventure", "science fiction", "action" ],
   "contentRating": "PG-13",
   "rating": 4,
-  "trailerUrl": "https://www.youtube.com/watch?v=d96cjJhvlMA"
+  "trailerUrl": "https://www.youtube.com/embed/d96cjJhvlMA?rel=0&amp;showinfo=0"
  }
 ]
 
