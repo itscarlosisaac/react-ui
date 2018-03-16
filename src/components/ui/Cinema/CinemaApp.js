@@ -25,7 +25,7 @@ class CinemaApp extends Component {
     <Header title="Cinema App" description="Movie Theather Ticket App." />
     <div className="cinema__app">
      <header className="cinema__app__header">
-      <h3>Reserve your ticket.</h3>
+      <h3>Reserve your ticket</h3>
      </header>
      <div className="cinema__app__body">
       <MovieSidebar movie={this.state.movie} />

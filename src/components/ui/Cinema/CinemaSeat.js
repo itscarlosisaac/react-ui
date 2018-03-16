@@ -5,12 +5,22 @@ class CinemaSeat extends Component {
   super(props);
   this.state = {
    rowLetters: ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K' ] ,
-   status: ''
+   selected: false,
+   reserved: false,
+   disabled: false
   }
  }
+
+ toggleActive(){
+  this.setState((prevState) => {
+   const status = prevState.selected
+   return ({ selected: !status });
+  })
+ }
+
  render () {
   return (
-   <div>
+   <div onClick={this.toggleActive.bind(this)}>
     | {this.props.number}{this.state.rowLetters[this.props.row]} |
    </div>
   )

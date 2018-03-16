@@ -1,4 +1,30 @@
 .cinema__app{
+ max-width: 1150px;
+
+ &__header{
+  background: #151a22;
+  height: 70px;
+  text-align: center;
+  color:#fff;
+  line-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  h3{
+   margin: 0;
+   line-height: unset;
+   font-size: 1rem;
+   letter-spacing: 1.3pt;
+   text-transform: uppercase;
+   font-weight: 500;
+  }
+ }
+
+
+ &__body{
+  display: flex;
+  flex-direction: row;
+ }
  &__seats__container{
   display: flex;
   flex-direction: column;
@@ -10,5 +36,47 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+ }
+ // Sidebar 
+ &__sidebar{
+  background: #222830;
+  max-width: 400px;
+  iframe{
+   width: 100%;
+  }
+
+  &--content{
+   padding: 30px;
+  }
+
+  &--title{
+   color: #fff;
+   margin-top: 0;
+   letter-spacing: .3pt;
+   font-size: 1.5rem;
+   font-weight: 600;
+  }
+
+  &--meta{
+   color:#cbccce;
+   font-size: 14px;
+   font-weight: 500;
+   margin-bottom: 0;
+   span{
+    margin-right: 10px;
+    .icon{
+     margin-right: 5px;
+     &-calendar{
+      margin-left: 20px;
+     }
+    }
+    &:last-child{ margin: 0; }
+   }
+  }
+
+  &--desc{
+   color:#fff;
+   margin-top: 30px;
+  }
  }
 }
