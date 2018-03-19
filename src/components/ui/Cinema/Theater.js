@@ -28,7 +28,8 @@ class Theater extends Component {
    <div>
    <header>{name}
    </header>
-   <div className="cinema__app--screen">
+   <div className="cinema__app__screen">
+    <div className="cinema__app__screen--inner"></div>
    </div>
    <div className="cinema__app__seats__container">
     { this.calculateRows() }
