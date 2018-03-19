@@ -25,11 +25,11 @@ class Theater extends Component {
  render () {
   const { name } = this.props.room;
   return (
-   <div>
-   <header>{name}
-   </header>
+   <div className="cinema__app__theater">
+   <header><h1 className="cinema__app__theater__title">{name}</h1></header>
    <div className="cinema__app__screen">
     <div className="cinema__app__screen--inner"></div>
+    <div className="cinema__app__screen--glow"></div>
    </div>
    <div className="cinema__app__seats__container">
     { this.calculateRows() }

@@ -3,9 +3,9 @@ import React from 'react';
 const Rooms = [
  {
   "id": 1,
-  "name": "Room 1",
+  "name": "CXC - 3D | Room",
   "rows": 8,
-  "seats": [ 11, 11, 13, 13, 17, 17, 17, 13 ]
+  "seats": [ 9, 9, 11, 11, 13, 13, 11, 9 ]
  }
 ]
 

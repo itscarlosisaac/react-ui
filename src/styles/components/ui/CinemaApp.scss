@@ -20,18 +20,54 @@
   }
  }
 
-
  &__body{
   display: flex;
   flex-direction: row;
+  background: #28313B;
  }
  &__seats__container{
   display: flex;
   flex-direction: column;
  }
  &__seat{
-
+  cursor: pointer;
+  &--selected{
+   svg{
+    margin: 2px;
+    font-size: 13px;
+    text{
+     font-weight: bold;
+     cursor: pointer;
+     fill:#FFFFFF !important;
+    }
+   }
+  }
+  svg{
+   margin: 2px;
+   font-size: 13px;
+   text{
+    font-weight: bold;
+    cursor: pointer;
+    fill:#4F5F6F;
+   }
+  }
  }
+
+&__theater{
+ width: 100%;
+ padding: 20px;
+ &__title{
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1pt;
+  color:#FFF;
+  text-transform: uppercase;
+  line-height: initial;
+  margin: 0 0 1rem;
+  font-weight: 500;
+ }
+}
+
  &__row{
   display: flex;
   flex-direction: row;
@@ -40,7 +76,7 @@
  // Sidebar 
  &__sidebar{
   background: #222830;
-  max-width: 400px;
+  max-width: 340px;
   iframe{
    width: 100%;
   }
@@ -82,12 +118,31 @@
 
  // Screen
  &__screen{
+  position: relative;
+  width: 100%;
+  margin: 0 auto 30px;
   &--inner{
    width: 100%;
-   height: 100px;
-   border-top: red 5px solid;
-   background: green;
-   border-radius:100%;
+   height: 10px;
+   background: #24313E;
+   border-bottom:5px solid #101928;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+   position: relative;
+   z-index:10;
+  }
+  &--glow{
+   width: 100%;
+   height: 40px;
+   margin-top: -5px;
+   background: -moz-linear-gradient(top, rgba(23,189,240,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, rgba(23,189,240,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, rgba(23,189,240,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17bdf0', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+   z-index:5;
+   position: relative;
+   opacity: .2;
+   perspective-origin: center 20px;
+   transform: rotateX(24deg)
   }
  }
 }
