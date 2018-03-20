@@ -5,6 +5,7 @@ const Rooms = [
   "id": 1,
   "name": "CXC - 3D | Room",
   "rows": 8,
+  "rowLetters": ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K' ] ,
   "seats": [ 9, 9, 11, 11, 13, 13, 11, 9 ]
  }
 ]

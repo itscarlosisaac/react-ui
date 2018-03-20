@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import EventEmitter from './EventEmitter'
+
 
 class CinemaSeat extends Component {
  constructor(props){
@@ -18,6 +20,10 @@ class CinemaSeat extends Component {
   })
  }
 
+ componentDidUpdate (prevProps, prevState) {
+    EventEmitter.emit('update', this.state )
+ }
+ 
  render () {
   return (
    <div 

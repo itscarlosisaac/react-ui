@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import SeatRow from './SeatRow';
-
+import User from './User';
 class Theater extends Component {
 
  calculateRows(){
   const { rows } = this.props.room
   const result = []
   for( let i = 0; i < rows; i++  ){
-    result.push(<SeatRow className="cinema__app__row" key={i} room={this.props.room} seats={this.props.room.seats[i]} />);
+    result.push(<SeatRow className="cinema__app__row" key={i} room={this.props.room} rowLetter={i} seats={this.props.room.seats[i]} />);
   }
   return result;
  }
@@ -22,6 +22,7 @@ class Theater extends Component {
       <div className="cinema__app__screen--glow"></div>
     </div>
     { this.calculateRows() }
+    <User name="Peter Quill" ticketsCount="4"/>
    </div>
   )
  }
