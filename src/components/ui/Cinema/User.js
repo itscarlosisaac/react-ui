@@ -11,9 +11,17 @@ class User extends Component {
  }
  
  componentWillMount() {
-  EventEmitter.on( 'update', (count) => {
-   this.setState( (prevState) => {
+  EventEmitter.on( 'update', ( count, ticketRow, number ) => {
+   this.setState( (prevState, nextState) => {
+    const sel = ticketRow + number.toString();
+
+    const ticketsRow = 
+     prevState.tickets.includes(sel) ? 
+     prevState.tickets.filter( (item) => { return item != sel }) : 
+     prevState.tickets.concat(sel)
+
     return {
+     tickets: ticketsRow,
      ticketsCount: count
     }
    })
@@ -29,11 +37,11 @@ class User extends Component {
     </div>
     <div>
      <h3>Tickets</h3>
-     <p>{this.state.tickets}</p>
+     { <h4>{this.state.tickets.join(', ')}</h4> }
     </div>
     <div>
      <h2>Price</h2>
-     <p>{this.state.ticketsCount * 6.48 }</p>
+     <p>{(this.state.ticketsCount * 6.48).toFixed(2) }</p>
     </div>
    </div>
   )

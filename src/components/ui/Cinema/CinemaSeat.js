@@ -22,7 +22,9 @@ class CinemaSeat extends Component {
 
  componentDidUpdate (prevProps, prevState) {
     const count = document.querySelectorAll('.cinema__app__seat--selected').length;
-    EventEmitter.emit('update', count )
+    const row = this.state.rowLetters[this.props.row];
+    const num = this.props.number
+    EventEmitter.emit('update', count, row, num  )
  }
  
  render () {

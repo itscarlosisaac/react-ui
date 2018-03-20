@@ -22,7 +22,7 @@ class Theater extends Component {
       <div className="cinema__app__screen--glow"></div>
     </div>
     { this.calculateRows() }
-    <User name="Peter Quill" ticketsCount="4"/>
+    <User name="Peter Quill" />
    </div>
   )
  }
