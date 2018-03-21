@@ -7,7 +7,7 @@ class Theater extends Component {
   const { rows } = this.props.room
   const result = []
   for( let i = 0; i < rows; i++  ){
-    result.push(<SeatRow className="cinema__app__row" key={i} room={this.props.room} rowLetter={i} seats={this.props.room.seats[i]} />);
+    result.push(<SeatRow className="cinema__app__row" key={i} room={this.props.room} rowLetter={this.props.room.rowLetters[i]} seats={this.props.room.seats[i]} />);
   }
   return result;
  }

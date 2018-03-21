@@ -183,4 +183,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17bdf0', end
    margin: 0;
   }
  }
+ &__seats__row{
+  margin: -5px 19px 0;
+  display: flex;
+  align-self: baseline;
+  color: white;
+  font-weight: 500;
+  font-size: .8rem;
+  &--left{
+   flex-grow: 2;
+  }
+  &--right{
+   flex-grow: 2;
+   text-align: right;
+   display: block;
+  }
+ }
 }
