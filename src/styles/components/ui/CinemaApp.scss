@@ -145,4 +145,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17bdf0', end
    transform: rotateX(24deg)
   }
  }
+
+ // User Profile
+ &__profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 -20px -20px;
+  background: #1b2127;
+ }
+
+ &__userprice,
+ &__usertickets,
+ &__userinfo{
+  padding: 20px;
+  margin: 10px;
+  color:#fff;
+  width: 33.333333%;
+  h3{
+   text-transform: uppercase;
+   font-weight: 600;
+   font-size: 1em;
+   letter-spacing: .7pt;
+   margin: 0 0 10px 0;
+   position: relative;
+   &:after{
+    content: '';
+    background: #ee6956;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    bottom:-5px;
+    left:0;
+   }
+  }
+  p{
+   margin: 0;
+  }
+ }
 }

@@ -30,18 +30,18 @@ class User extends Component {
 
  render () {
   return (
-   <div>
-    <div>
+   <div className="cinema__app__profile">
+    <div className="cinema__app__userinfo">
      <h3>Name</h3>
      <p>{this.props.name}</p>
     </div>
-    <div>
+    <div className="cinema__app__usertickets">
      <h3>Tickets</h3>
-     { <h4>{this.state.tickets.join(', ')}</h4> }
+     { <p>{this.state.tickets.length > 0 ? this.state.tickets.join(', ') : "No seat selected"}</p> }
     </div>
-    <div>
-     <h2>Price</h2>
-     <p>{(this.state.ticketsCount * 6.48).toFixed(2) }</p>
+    <div className="cinema__app__userprice">
+     <h3>Price</h3>
+     <p>US$ {(this.state.ticketsCount * 6.48).toFixed(2) }</p>
     </div>
    </div>
   )
