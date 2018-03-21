@@ -6,7 +6,7 @@ class SeatRow extends Component {
  calculateSeats(iterator){
   const seats = []
   for( let e = 1; e <= iterator; e++ ){
-   seats.push(<CinemaSeat className="cinema__app__seat" key={e} row={this.props.rowLetter} number={e} />);
+   seats.push(<CinemaSeat className="cinema__app__seat" key={e} row={this.props.rowNumber} number={e} />);
   }
   return seats;
  }

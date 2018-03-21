@@ -57,6 +57,10 @@
 &__theater{
  width: 100%;
  padding: 20px;
+ display: flex;
+ box-sizing: border-box;
+ flex-direction: column;
+ justify-content: space-between;
  &__title{
   text-align: center;
   font-size: 1rem;
@@ -77,6 +81,7 @@
  // Sidebar 
  &__sidebar{
   background: #222830;
+  max-width: 320px;
   iframe{
    width: 100%;
   }
@@ -197,6 +202,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17bdf0', end
    flex-grow: 2;
    text-align: right;
    display: block;
+  }
+ }
+}
+
+// MEdia query
+
+@media all and (max-width:1280px){
+ .cinema__app{
+  &__body{
+   flex-direction: column;
+  }
+  &__sidebar{
+   display: flex;
+   max-width: none;
+   &__video{
+    width: 50%;
+   }
+   &--content{
+    width: 50%;
+   }
   }
  }
 }

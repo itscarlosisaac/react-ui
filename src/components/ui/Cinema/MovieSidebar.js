@@ -5,7 +5,7 @@ class MovieSidebar extends Component {
   const { name, description, length, year, categories, contentRating, rating, trailerUrl } = this.props.movie
   return (
    <aside className="cinema__app__sidebar">
-    <div>
+    <div className="cinema__app__sidebar__video">
      <iframe height="315" src={trailerUrl} frameBorder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
     <div className="cinema__app__sidebar--content">
