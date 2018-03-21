@@ -7,7 +7,14 @@ const Rooms = [
   "rows": 8,
   "rowLetters": ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K' ] ,
   "seats": [ 9, 9, 11, 11, 13, 13, 11, 9 ]
- }
+ },
+ {
+  "id": 2,
+  "name": "3D | VIP Room",
+  "rows": 6,
+  "rowLetters": ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K' ] ,
+  "seats": [ 7, 9, 11, 11, 9, 7 ]
+ },
 ]
 
 const Movies = [

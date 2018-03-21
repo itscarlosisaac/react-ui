@@ -21,7 +21,9 @@ class Theater extends Component {
       <div className="cinema__app__screen--inner"></div>
       <div className="cinema__app__screen--glow"></div>
     </div>
-    { this.calculateRows() }
+    <div className="cinema__app__rows">
+      { this.calculateRows() }
+    </div>
     <User name="Peter Quill" />
    </div>
   )
